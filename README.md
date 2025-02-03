@@ -1,0 +1,3 @@
+# React Native useRef: Accessing .current too early
+
+This repository demonstrates a common issue when using the `useRef` hook in React Native.  Accessing `ref.current` immediately after assigning the ref might result in `null` or `undefined` because the ref's value isn't updated synchronously. The solution involves using `useEffect` with an empty dependency array to ensure the ref's value is available after the component mounts. This is a crucial point for anyone working with refs and animations or other post-render operations in React Native.
